@@ -15,5 +15,5 @@ if not path.is_file():
         total_length = int(r.headers.get('Content-Length'))
 
         with tqdm.wrapattr(r.raw, "read", total=total_length, desc="") as raw:
-            with open('data1/sensor_metrics.csv', "wb") as output:
+            with open('data/sensor_metrics.csv', "wb") as output:
                 shutil.copyfileobj(raw, output)
